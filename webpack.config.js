@@ -1,26 +1,24 @@
 var path = require('path');
 
 module.exports = {
-  entry: './frontend/movie_app.jsx',
+  mode: 'development',
+  entry: './app/javascript/packs/movie_app.jsx',
   output: {
     filename: './bundle.js',
   },
   module: {
     rules: [
       {
-        test: [/\.jsx?$/],
+        test: /\.(js|jsx)$/,
         exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
-          query: {
-            presets: ['@babel/env', '@babel/react']
-          }
         },
       }
     ]
   },
   devtool: 'source-map',
   resolve: {
-    extensions: ['.js', '.jsx', '*']
+    extensions: ['.js', '.jsx', '*'],
   }
 };
