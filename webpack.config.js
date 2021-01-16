@@ -20,5 +20,12 @@ module.exports = {
   devtool: 'source-map',
   resolve: {
     extensions: ['.js', '.jsx', '*'],
+    fallback: {
+      dgram: false,
+      fs: false,
+      net: false,
+      tls: false,
+      child_process: false
+    }
   }
 };
