@@ -11,5 +11,5 @@ document.addEventListener("DOMContentLoaded", () => {
   // TESTING END
 
   const root = document.getElementById("root");
-  ReactDOM.render(<Root store={store} />, root);
+  ReactDOM.render(<h1>asdfasdf</h1>);
 });
