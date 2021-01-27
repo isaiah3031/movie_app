@@ -13,6 +13,9 @@ module.exports = {
         exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
+          options: {
+            presets: ["@babel/preset-env", "@babel/preset-react"]
+          }
         },
       }
     ]
@@ -20,12 +23,8 @@ module.exports = {
   devtool: 'source-map',
   resolve: {
     extensions: ['.js', '.jsx', '*'],
-    fallback: {
-      dgram: false,
-      fs: false,
-      net: false,
-      tls: false,
-      child_process: false
-    }
+
+  },
+  node: {
   }
 };
