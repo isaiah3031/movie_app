@@ -1,5 +1,4 @@
-class ApplicationController < ActionController::Base
-  protect_from_forgery
+class ApplicationController < ActionController::API
   helper_method :current_user, :logout, :login, :logged_in?
 
 
