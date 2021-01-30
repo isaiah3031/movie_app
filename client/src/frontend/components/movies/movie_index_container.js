@@ -8,7 +8,6 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  fetchMoviesByGenre: (genreId) => dispatch(fetchMoviesByGenre(genreId)),
   fetchGenreList: () => dispatch(fetchGenreList())
 })
 

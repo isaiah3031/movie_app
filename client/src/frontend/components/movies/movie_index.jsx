@@ -16,12 +16,11 @@ class MovieIndex extends React.Component {
   render() {
     return (
       <div>
-        {Object.values(this.props.genres).map((genre) => 
+        {Object.values(this.props.genres).map((genre) =>
           <section>
             <label>{genre.name}</label>
             <MoviesByGenreContainer genre={genre}/>
           </section>
-
         )}   
       </div>
     )
