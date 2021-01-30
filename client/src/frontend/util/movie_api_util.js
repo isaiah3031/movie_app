@@ -1,12 +1,13 @@
-export const fetchMovies = (filters) => {
-  return $.ajax({
+import $ from 'jquery'
+
+export const fetchGenreList = () => 
+  $.ajax({
     type: 'GET',
-    url: 'http://img.omdbapi.com/?i=tt3896198&h=600&apikey=a70326c2',
-    // data: {
-    //   title: boundsObject(filters.bounds),
-    //   genre: filters.minSeating,
-    //   type: filters.type
-    // },
-    // error: (err) => console.log(err)
+    url: 'https://api.themoviedb.org/3/genre/movie/list?api_key=e9eda2e3cdaed9db48b1d94102fe9602&language=en-US',
   })
-}
+
+export const fetchMoviesByGenre = (genreInt) =>
+  $.ajax({
+    type: 'GET',
+    url: `https://api.themoviedb.org/3/discover/movie?api_key=e9eda2e3cdaed9db48b1d94102fe9602&language=en-US&with_genres=${genreInt}`
+  })
