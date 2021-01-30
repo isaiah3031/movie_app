@@ -27,9 +27,12 @@
     "webpack-cli": "^4.4.0",
     "webpack-dev-server": "^3.11.2"
   },
+  "engines": {
+    "node": "15.6.0"
+  },
   "scripts": {
-    "start": "webpack --mode development",
-    "dev": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production"
+    "build": "yarn --cwd client install && yarn --cwd client build",
+    "deploy": "cp -a client/build/. public/",
+    "heroku-postbuild": "yarn build && yarn deploy"
   }
 }
