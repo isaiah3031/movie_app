@@ -1,11 +1,13 @@
 import React from 'react'
-import '../../../stylesheets/carousels.scss'
+import '../../../stylesheets/small_icons.scss'
+
 function MovieIcon(props) {
+  const {movie: { title, poster_path }} = props
   return (
-    <>
-      <label>{props.movie.title}</label>
-      <img src={`https://image.tmdb.org/t/p/w500${props.movie.poster_path}`}/>
-    </>
+    <div className='small_icons'>
+      <div>{title}</div>
+      <img src={`https://image.tmdb.org/t/p/w500${poster_path}`}/>
+    </div>
   )
 }
 

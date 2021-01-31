@@ -1,5 +1,6 @@
 import React from 'react'
 import MovieIcon from './movie_icon'
+import '../../../stylesheets/horizontal_lists.scss'
 
 class MoviesByGenre extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class MoviesByGenre extends React.Component {
   
   render() {
     try {
-      return <div>
+      return <div className='horizontal-lists'>
         {
           this.props.movies[this.props.genre.id].map(movie => {
           return <MovieIcon movie={movie}/>

@@ -1,0 +1,14 @@
+.small_icons {
+  display: flex;
+  flex-direction: column;
+
+  width: fit-content;
+  img {
+    height: 200px;
+  }
+  div {
+    color: white;
+    position: absolute;
+    text-overflow: ellipsis;
+  }
+}
