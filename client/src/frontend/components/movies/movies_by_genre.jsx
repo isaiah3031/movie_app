@@ -1,9 +1,8 @@
 import React, {useEffect} from 'react'
 import MovieIcon from './movie_icon'
-import '../../../stylesheets/horizontal_lists.scss'
-import $ from 'jquery'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css';
+
 function MoviesByGenre(props) {
   useEffect(() => {
     props.fetchMoviesByGenre(props.genre.id)
@@ -32,25 +31,21 @@ function MoviesByGenre(props) {
     }
   };
 
-    try {
-      return ( 
-          <Carousel 
-            infinite={true}
-            responsive={responsive}>        
-            {
-              props.movies[props.genre.id].map((movie, index) => {
-              return <MovieIcon id={index} movie={movie} />
-            }
-          )}
-        </Carousel>
-      )
-    } catch (error) {
-      
-    }
-    return (
-      null
-    )
-  
+  try {
+    return ( 
+      <Carousel 
+        infinite={true}
+        responsive={responsive}>        
+        {
+          props.movies[props.genre.id].map((movie, index) => {
+          return <MovieIcon id={index} movie={movie} />
+        }
+      )}
+    </Carousel>
+  )
+  } catch (error) {
+    return null      
+  }
 }
 
 export default MoviesByGenre
