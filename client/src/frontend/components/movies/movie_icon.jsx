@@ -5,7 +5,6 @@ function MovieIcon(props) {
   const {movie: { title, poster_path }} = props
   return (
     <div className='small_icons'>
-      <div>{title}</div>
       <img src={`https://image.tmdb.org/t/p/w500${poster_path}`}/>
     </div>
   )

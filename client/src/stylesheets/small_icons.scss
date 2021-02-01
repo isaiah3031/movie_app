@@ -1,14 +1,10 @@
 .small_icons {
   display: flex;
   flex-direction: column;
-
+  word-wrap: break-all;
   width: fit-content;
   img {
     height: 200px;
-  }
-  div {
-    color: white;
-    position: absolute;
-    text-overflow: ellipsis;
+    margin: 15px;
   }
 }
