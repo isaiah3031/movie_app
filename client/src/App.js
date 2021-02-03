@@ -1,15 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import Root from './frontend/components/root'
-import configureStore from './frontend/store/store' 
+import {store} from './frontend/store/store' 
 import {fetchMoviesByGenre} from './frontend/actions/movie_actions'
 import {fetchGenreList} from './frontend/util/movie_api_util'
 window.fetchGenreList = fetchGenreList;
 window.fetchMoviesByGenre = fetchMoviesByGenre;
 function App() {
-  const store = configureStore()
-  window.getState = store.getState
-  window.d = store.dispatch
+  // window.getState = store.getState
+  // window.d = store.dispatch
   return (
     <div className="App">
       <Root store={store}/>

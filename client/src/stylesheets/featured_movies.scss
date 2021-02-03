@@ -1,0 +1,33 @@
+.featured_content {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  .small_featured {
+    width: 50%;
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    img {
+      object-fit: cover;
+      height: 150px;
+      width: fit-content;
+    }
+
+    p {
+      display: none;
+    }
+  }
+
+  .large_featured {
+    order: 1;
+    width: 50%;
+    float: left;
+    object-fit: cover;
+    height: 100%;
+    img {
+      height: 300px;
+    }
+  }
+}
