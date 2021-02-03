@@ -1,13 +1,24 @@
 import React from 'react'
 import { withRouter } from 'react-router'
 import '../../../stylesheets/small_icons.scss'
+import MovieDetailContainer from './movie_detail_container'
+// Should I render the detail view here or somewhere else?
 
-function MovieIcon(props) {
-  const {id, movie: { title, poster_path }} = props
+const MovieIcon = (props) => {
+  const {history, movie: { title, poster_path, id }} = props
+  const viewDetails = () => {
+    history.push(`/movie/${id}`)
+  }
+
   return (
-    <div  className='small_icons' id={id}>
-      <img src={`https://image.tmdb.org/t/p/w500${poster_path}`}/>
-    </div>
+    <>
+      <div onClick={() => {
+        viewDetails(props)
+        }
+      } className='small_icons' id={id}>
+        <img src={`https://image.tmdb.org/t/p/w500${poster_path}`}/>
+      </div>
+    </>
   )
 }
 
