@@ -2,11 +2,18 @@ require 'bcrypt'
 
 class User < ApplicationRecord
   validates :username, :password_digest, :session_token, presence: true
+  validate :validate_watch_history
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
   after_initialize :ensure_session_token
-
+  
   attr_reader :password
+
+  def validate_watch_history
+    if watch_history.is_a?(Array) && !watch_history.detect{|i| i.is_a? Integer}
+      errors.add(:watch_history, :invalid)
+    end 
+  end
 
   def password=(password)
     @password = password

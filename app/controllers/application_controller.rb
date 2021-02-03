@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::API
   helper_method :current_user, :logout, :login, :logged_in?
 
-
   def current_user 
     @current_user ||= User.find_by(session_token: session[:session_token])
   end

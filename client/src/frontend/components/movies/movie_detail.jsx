@@ -4,10 +4,16 @@ import {withRouter} from 'react-router'
 
 function MovieDetail(props) {
   let movieId = props.history.location.pathname.slice(7)
+
   useEffect(() => {
     props.fetchMovie(movieId)
   }, [])
   const movie = props.movies[movieId]
+
+  const handlePlay = (movieId) => {
+    props.editUserProfile({watchHistory: movieId}, props.currentUserId);
+  }
+
   try {
     return (
       <div className='detail-view'>
@@ -15,6 +21,9 @@ function MovieDetail(props) {
         <p>
           {movie.overview}
         </p>
+        <form>
+          <button onClick={() => handlePlay(movie.id)}>Play</button>
+        </form>
       </div>
     )
   } catch (error) {

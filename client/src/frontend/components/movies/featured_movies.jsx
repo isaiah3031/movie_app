@@ -31,6 +31,7 @@ class FeaturedMovies extends React.Component{
   }
 
   render() {
+    
     return <section className='featured_content'>
       {this.state.selections.map((movieIndex, index) => {
         if (!this.props.movies.featured) return null

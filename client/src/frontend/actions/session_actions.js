@@ -1,5 +1,6 @@
 import * as types from '../constants/action_types'
 import * as SessionAPIUtil from '../util/session_api_util'
+import * as UserProfileUtil from '../util/user_profile_util'
 
 export const receiveCurrentUser = (user) => ({
   type: types.RECEIVE_CURRENT_USER,
@@ -32,4 +33,8 @@ export const signup = (user) => dispatch =>{
 export const logout = () => dispatch => {
   // dispatch(startLoading())
   SessionAPIUtil.logout().then(() => dispatch(logoutCurrentUser()))
+}
+
+export const editUserProfile = (movieId, userId) => dispatch => {
+  UserProfileUtil.editUserProfile(movieId, userId).then((user) => dispatch(receiveCurrentUser(user)))
 }
