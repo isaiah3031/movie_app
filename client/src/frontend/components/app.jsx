@@ -6,7 +6,7 @@ import LoginFormContainer from './session/login_form_container'
 import MovieIndexContainer from './movies/movie_index_container'
 import MovieDetailContainer from './movies/movie_detail_container'
 import FeaturedMoviesContainer from './movies/featured_movies_container'
-
+console.log(process.env.REACT_APP_GOOGLE_API_KEY)
 const App = () => {
   return (
     <div>
