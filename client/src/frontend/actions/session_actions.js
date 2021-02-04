@@ -25,7 +25,7 @@ export const login = (user) => dispatch => {
   SessionAPIUtil.login(user).then((user) => dispatch(receiveCurrentUser(user)))
 }
 
-export const signup = (user) => dispatch =>{ 
+export const signup = (user) => dispatch => { 
   // dispatch(startLoading())
   SessionAPIUtil.signup(user).then((user) => dispatch(receiveCurrentUser(user)))
 }

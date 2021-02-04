@@ -2,15 +2,25 @@ require 'bcrypt'
 
 class User < ApplicationRecord
   validates :username, :password_digest, :session_token, presence: true
-  validate :validate_watch_history
+  # validate :validate_watch_history
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
   after_initialize :ensure_session_token
-  
+  before_update :format_watch_history
+
   attr_reader :password
 
+  def format_watch_history
+    seen = []
+    self.watch_history.each{ |movieId| 
+      movieId = movieId.to_i if movieId.is_a? String
+      seen.unshift(movieId) unless seen.include?(movieId)
+    }
+    self.watch_history = seen
+  end
+
   def validate_watch_history
-    if watch_history.is_a?(Array) && !watch_history.detect{|i| i.is_a? Integer}
+    if (watch_history != [] && !!watch_history.detect{|i| i.is_a? Integer})
       errors.add(:watch_history, :invalid)
     end 
   end
