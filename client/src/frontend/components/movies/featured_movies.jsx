@@ -1,24 +1,28 @@
 import React from 'react'
 import '../../../stylesheets/featured_movies.scss'
-import ContinueWatching from './continue_watching'
- 
+import ContinueWatchingContainer from './continue_watching_container'
+
+// Renders the ContinueWatching component and four featured movies that are hardcoded into the state
+// at selections. This was done to avoid having to hit the database separately for each trailer.
 class FeaturedMovies extends React.Component{
   constructor(props) {
     super(props)
     this.state = {
       selectedMovie: '',
-      selections: this.randomIndices()
+      selections: [464052, 775996, 508442, 560144]
     }
   }
 
   componentWillMount() {
-    if (this.props.currentUser.watch_history) {
-      this.props.currentUser.watch_history.forEach((movieId) => {
+    const {currentUser: {watch_history}} = this.props
+    if (watch_history) {
+      watch_history.forEach((movieId) => {
         this.props.fetchMovie(movieId)
       })
     }
-
-    this.props.fetchFeaturedMovies()
+    this.state.selections.forEach((movieId) => {
+      this.props.fetchMovie(movieId)
+    })
   }
 
   randomIndices() {
@@ -51,27 +55,26 @@ class FeaturedMovies extends React.Component{
         <section className='featured_content'>
           {this.state.selections.map((movieIndex, index) => {
             if (!this.props.movies.featured) return null
-            let movie = this.props.movies.featured[movieIndex]
+            
+            let movie = this.props.movies[movieIndex]
+            if (!movie.title) debugger
             return (
               <div id={movieIndex} 
                 className={this.state.selectedMovie === movieIndex ? 'large_featured' : 'small_featured'}
                 onClick={() => this.toggleSelectedMovie(movieIndex)}>
-                <label>{movie.title}</label>
-                <img name={movieIndex} src={this.state.selectedMovie === movieIndex ? 
-                `https://image.tmdb.org/t/p/w500${movie.poster_path}` :
-                `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`
-                }/>
+                <h1>{movie.title}</h1>
+                {this.state.selectedMovie === movieIndex ? 
+                <iframe width='320' height='240' frameborder='0'
+                  src={`https://www.youtube.com/embed/${movie.video_key}?rel=0&amp;autoplay=1&mute=1&controls=0`}>
+                </iframe> :
+                <img name={movieIndex} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}/>
+                }
                 <p>{movie.overview}</p>
               </div>
             )
           })}
         </section>
-        {!!this.props.currentUser ? 
-          <ContinueWatching 
-            continueWatching={continueWatching} 
-            currentUser={this.props.currentUser}/> : 
-          null
-        }
+        {continueWatching === [] ? null : <ContinueWatchingContainer continueWatching={continueWatching}/>}
       </>
     )
   }

@@ -1,10 +1,11 @@
 import { connect } from 'react-redux'
 import { fetchMovie } from '../../actions/movie_actions'
-import ContinueWatching from './continue_watching'
+import HorizontalList from './horizontal_list'
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => ({
+  type: 'Continue Watching',
   currentUser: state.session,
-  continueWatching: state.entities.movies
+  continueWatching: ownProps.continueWatching
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -14,6 +15,6 @@ const mapDispatchToProps = dispatch => ({
 const ContinueWatchingContiainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(ContinueWatching)
+)(HorizontalList)
 
 export default ContinueWatchingContiainer

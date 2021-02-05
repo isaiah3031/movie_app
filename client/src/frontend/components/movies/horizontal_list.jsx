@@ -3,9 +3,11 @@ import MovieIcon from './movie_icon'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css';
 
-function MoviesByGenre(props) {
+function HorizontalList(props) {
   useEffect(() => {
-    props.fetchMoviesByGenre(props.genre.id)
+    if (props.type === 'genre') {
+      props.fetchMoviesByGenre(props.genre.id)
+    }
   }, [])
 
   const responsive = {
@@ -31,21 +33,28 @@ function MoviesByGenre(props) {
     }
   };
 
-  try {
-    return ( 
-      <Carousel 
-        infinite={true}
-        responsive={responsive}>        
+  let movies = []
+  switch (props.type) {
+    case ('Continue Watching'):
+      movies = props.continueWatching
+    case ('genre'):
+      if (props.genre) {
+        movies = props.movies[props.genre.id]
+      }
+  }
+
+  // if (props.type === 'genre') debugger
+  return ( 
+    <Carousel 
+      infinite={true}
+      responsive={responsive}>        
         {
-          props.movies[props.genre.id].map((movie, index) => {
+          movies.map((movie, index) => {
           return <MovieIcon id={index} movie={movie} />
         }
       )}
     </Carousel>
   )
-  } catch (error) {
-    return null      
-  }
 }
 
-export default MoviesByGenre
+export default HorizontalList

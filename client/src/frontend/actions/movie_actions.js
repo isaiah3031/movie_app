@@ -38,7 +38,11 @@ export const fetchGenreList = () => dispatch =>
   )
 
 export const fetchMovie = (movieId) => dispatch =>
-  MovieAPIUtil.fetchMovie(movieId).then(
-    (movie) => dispatch(receiveMovie(movie)
+  MovieAPIUtil.fetchMovieTrailer(movieId).then(({results}) => {
+    const video_key = results[0].key
+
+    MovieAPIUtil.fetchMovie(movieId).then((movie) => 
+      dispatch(receiveMovie(Object.assign({}, movie, {video_key: video_key}))
     )
   )
+})
