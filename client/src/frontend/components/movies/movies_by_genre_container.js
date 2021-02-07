@@ -1,20 +1,18 @@
 import { connect } from 'react-redux'
-import HorizontalList from './horizontal_list'
+import MoviesByGenrePage from './movies_by_genre_page'
 import { fetchMoviesByGenre } from '../../actions/movie_actions'
 
-const mapStateToProps = (state, ownProps) => ({
-  type: 'genre',
-  movies: state.entities.movies,
-  genre: ownProps.genre
+const mapStateToProps = (state) => ({
+  movies: state.entities.movies
 })
 
 const mapDispatchToProps = dispatch => ({
-  fetchMoviesByGenre: (genreId) => dispatch(fetchMoviesByGenre(genreId))
+  fetchMoviesByGenre: (genreId, page) => dispatch(fetchMoviesByGenre(genreId, page))
 })
 
 const MoviesByGenreContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(HorizontalList)
+)(MoviesByGenrePage)
 
 export default MoviesByGenreContainer

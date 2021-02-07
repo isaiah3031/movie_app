@@ -12,7 +12,6 @@ function HorizontalList(props) {
 
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 8,
       slidesToSlide: 8
@@ -43,14 +42,13 @@ function HorizontalList(props) {
       }
   }
 
-  // if (props.type === 'genre') debugger
   return ( 
     <Carousel 
       infinite={true}
       responsive={responsive}>        
         {
           movies.map((movie, index) => {
-          return <MovieIcon id={index} movie={movie} />
+          return <MovieIcon clickable={true} id={index} movie={movie} />
         }
       )}
     </Carousel>

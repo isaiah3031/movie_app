@@ -5,22 +5,25 @@ import SignupFormContainer from './session/signup_form_container'
 import LoginFormContainer from './session/login_form_container'
 import MovieIndexContainer from './movies/movie_index_container'
 import MovieDetailContainer from './movies/movie_detail_container'
-import FeaturedMoviesContainer from './movies/featured_movies_container'
+import MoviesByGenreContainer from './movies/movies_by_genre_container'
+import SearchContainer from './movies/search_container'
 
 const App = () => {
   return (
     <div>
       <header>
         <GreetingContainer />
+        <SearchContainer />
       </header>
-      <Route path='/signup' component={SignupFormContainer} />
-      <Route path='/login' component={LoginFormContainer} />
-      <Route exact path='/' component={FeaturedMoviesContainer} />
+      <Switch>
+        <Route path='/signup' component={SignupFormContainer} />
+        <Route path='/login' component={LoginFormContainer} />
+        <Route exact path='/genre/:genreId' component={MoviesByGenreContainer} />
       <Switch>
         <Route path='/movie/:movie_id' component={MovieDetailContainer} />
         <Route path='/' component={MovieIndexContainer} />
       </Switch>
-
+    </Switch>
     </div>
   )
 }

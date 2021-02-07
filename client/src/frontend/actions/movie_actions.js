@@ -16,8 +16,8 @@ export const receiveGenres = genres => ({
   genres
 })
 
-export const fetchMoviesByGenre = (genreId) => dispatch => 
-  MovieAPIUtil.fetchMoviesByGenre(genreId).then(
+export const fetchMoviesByGenre = (genreId, page=1) => dispatch => 
+  MovieAPIUtil.fetchMoviesByGenre(genreId, page).then(
     (movies) => 
       dispatch(receiveMovies({[genreId]: movies.results})
       )
@@ -36,6 +36,10 @@ export const fetchGenreList = () => dispatch =>
       dispatch(receiveGenres(genres.genres)
     )
   )
+
+export const fetchSearchResults = searchTerms => dispatch => 
+  MovieAPIUtil.fetchSearchResults(searchTerms).then(({results}) => 
+    dispatch(receiveMovies({searchResults: results})))
 
 export const fetchMovie = (movieId) => dispatch =>
   MovieAPIUtil.fetchMovieTrailer(movieId).then(({results}) => {

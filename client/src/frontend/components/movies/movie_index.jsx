@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import {withRouter} from 'react-router'
-import MoviesByGenreContainer from './movies_by_genre_container'
-
+import HorizontalMoviesByGenreContainer from './horizontal_movies_by_genre_container'
+import FeaturedMoviesContainer from './featured_movies_container'
 function MovieIndex(props) {
   useEffect(() => {
     props.fetchGenreList()
@@ -9,11 +9,12 @@ function MovieIndex(props) {
 
   return (
     <>
+      <FeaturedMoviesContainer />
       <div>
         {Object.values(props.genres).map((genre) =>
           <section>
             <label>{genre.name}</label>
-            <MoviesByGenreContainer genre={genre}/>
+            <HorizontalMoviesByGenreContainer genre={genre}/>
           </section>
         )}   
       </div>

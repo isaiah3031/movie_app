@@ -2,6 +2,7 @@ import React from 'react'
 import '../../../stylesheets/featured_movies.scss'
 import ContinueWatchingContainer from './continue_watching_container'
 import MovieIcon from './movie_icon'
+import FeaturedMovie from './featured_movie'
 
 // Renders the ContinueWatching component and four featured movies that are hardcoded into the state
 // at selections. This was done to avoid having to hit the database separately for each trailer. 
@@ -55,22 +56,15 @@ class FeaturedMovies extends React.Component{
         <section className='featured_content'>
           {this.state.selections.map((movieIndex) => {
             let movie = this.props.movies[movieIndex]
-            return (
-              <div id={movieIndex} 
+            return <div id={movieIndex} 
                 className={ this.isSelectedMovie(movieIndex) ? 'large_featured' : 'small_featured' }
                 onClick={() => this.toggleSelectedMovie(movieIndex)}>
-                <h1>{movie.title}</h1>
-                {/* The selected movie is returned as its trailer and all other featured movies are rendered as normal movie icons */}
                 {
                   this.isSelectedMovie(movieIndex) ? 
-                  <iframe 
-                    src={`https://www.youtube.com/embed/${movie.video_key}?rel=0&amp;autoplay=1&mute=1&controls=0`}>
-                  </iframe> :
-                  <MovieIcon movie={movie}/>
+                  <FeaturedMovie movie={movie}/> :
+                  <MovieIcon movie={movie} clickable={false}/>
                 }
-                <p>{movie.overview}</p>
               </div>
-            )
           })}
         </section>
         {continueWatching === [] ? null : <ContinueWatchingContainer continueWatching={continueWatching}/>}
