@@ -13,7 +13,7 @@ const App = () => {
     <div>
       <header>
         <GreetingContainer />
-        <SearchContainer />
+        
       </header>
       <Switch>
         <Route path='/signup' component={SignupFormContainer} />

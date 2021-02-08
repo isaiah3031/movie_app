@@ -1,5 +1,7 @@
 import React from 'react'
 import SearchResults from './search_results'
+import '../../../stylesheets/resets.css'
+import '../../../stylesheets/nav_bar.scss'
 
 class Search extends React.Component {
   constructor(props) {
@@ -24,8 +26,10 @@ class Search extends React.Component {
       <>
         <input 
           type='text' 
+          id='search-input'
           onChange={e => this.handleChanges(e)} 
-          value={this.state.searchTerms}/>
+          value={this.state.searchTerms}
+          />
         {
           this.props.searchResults != undefined && this.state.searchTerms.length > 0 ? 
           <SearchResults results={this.props.searchResults}/> :

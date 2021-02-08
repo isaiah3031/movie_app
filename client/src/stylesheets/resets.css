@@ -1,0 +1,27 @@
+button,
+input,
+img,
+section,
+div,
+iframe,
+h1,
+h2,
+h3,
+p,
+a {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+a {
+  color: white;
+}
+
+body {
+  background-color: #1d1d1d;
+}

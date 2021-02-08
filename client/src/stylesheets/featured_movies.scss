@@ -1,19 +1,17 @@
 .featured_content {
   height: 100vh;
-  width: 100vw;
+  width: 95vw;
+  margin: 15px auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-around;
+  padding: px 0 0 0;
   .small_featured {
-    width: 50%;
+    height: fit-content;
     order: 2;
-    display: flex;
-    flex-direction: column;
-    img {
-      object-fit: cover;
-      height: 150px;
-      width: fit-content;
-    }
+    padding: 0;
+    margin: 150px 0 0 0;
 
     p {
       display: none;
@@ -22,12 +20,22 @@
 
   .large_featured {
     order: 1;
-    width: 50%;
-    float: left;
+    width: 60%;
     object-fit: cover;
-    height: 100%;
-    img {
-      height: 300px;
+    height: 80%;
+    text-align: center;
+    h1 {
+      text-align: left;
+    }
+    iframe {
+      object-fit: cover;
+      margin: 25px 0 0 0;
+      height: 90%;
+      width: 100%;
+      border: none;
+    }
+    p {
+      padding: 20px 80px;
     }
   }
 }

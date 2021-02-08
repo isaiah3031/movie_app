@@ -1,0 +1,12 @@
+#search-results {
+  width: 50vw;
+  z-index: 99;
+  top: 50px;
+  opacity: 0.9;
+  height: fit-content;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #1d1d1d;
+}

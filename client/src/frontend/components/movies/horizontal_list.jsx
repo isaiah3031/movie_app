@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import MovieIcon from './movie_icon'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css';
+import '../../../stylesheets/carousels.scss'
 
 function HorizontalList(props) {
   useEffect(() => {
@@ -18,8 +19,8 @@ function HorizontalList(props) {
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 5,
-      slidesToSlide: 4
+      items: 6,
+      slidesToSlide: 5
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -44,6 +45,7 @@ function HorizontalList(props) {
 
   return ( 
     <Carousel 
+      className='carousels'
       infinite={true}
       responsive={responsive}>        
         {

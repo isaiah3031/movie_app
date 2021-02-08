@@ -1,34 +1,27 @@
 import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
-// import BugIcon from 'images/bug_icon.png'
-// import UserIcon from 'images/user_icon.png'
-// import ArrowIcon from 'images/arrow_icon.png'
+import SearchContainer from '../movies/search_container'
+import CouchIcon from '../../../images/couch_icon_ma.png'
+import UserIcon from '../../../images/user_icon_ma.png'
+import HamburgerIcon from '../../../images/hamburger.png'
 
 const Greeting = (props) => {
-  if (props.currentUser.username !== undefined){
-    return (
-      <div className='greeting-container'>
-        <Link to='/'>
-          {/* <img src={BugIcon} alt=''/> */}
-          <h1>Bug Hunter</h1>
-        </Link>      
-        <div>
-          <h1>Welcome {props.currentUser.username}</h1>
-            <button onClick={() => props.logout()}>Logout</button>  
-        </div>
-      </div>
-    )
-  } else {
-    return (
-      <div className='greeting-container'>
-      <Link className='icon' to='/'>
-        {/* <img src={BugIcon} alt=''/> */}
-        <h1>Bug Hunter</h1>
-      </Link>
-      {/* <img src={ArrowIcon} alt=''/>
-      <img src={UserIcon} alt=''/> */}
-      <h2>User info</h2>
+  const welcomeMessage = () => {
+    if (props.currentUser.username) {
+      return <h1>Welcome {props.currentUser.username}</h1>
+    } else {
+      return null
+    }
+  }
 
+  const loggedIn = () => (
+    <div>
+      <button onClick={() => props.logout()}>Logout</button>  
+    </div>
+  )
+
+  const loggedOut = () => (
+    <div>
       <Link to='/signup'>
         <button>Sign up</button>
       </Link>
@@ -36,7 +29,28 @@ const Greeting = (props) => {
         <button>Login</button>
       </Link>
     </div>
-  )}
-}
+  )
+  
+  return (
+    <div className='greeting-container'>
+      <Link className='logo nav-section' to='/'>
+        <img src={CouchIcon} alt=''/>
+        <h1>Couchflix</h1>
+      </Link>      
+      <SearchContainer />
+      <section className='nav-section'>
+        <div className='user-options'>
+          {welcomeMessage()}
+          <img src={UserIcon}/>
+          { props.currentUser.username ? loggedIn() : loggedOut() }
+          
+        </div>
+        <img id='hamburger-icon' src={HamburgerIcon} />
+      </section>
+
+      
+    </div>
+  )
+} 
 
 export default Greeting;
