@@ -1,0 +1,21 @@
+.side-menu {
+  z-index: 10;
+  position: absolute;
+  width: 200px;
+  right: 5px;
+  top: 65px;
+  padding: 10px;
+  border: solid white thin;
+  border-radius: 10px;
+  background-color: black;
+  opacity: 0.9;
+  h2 {
+    border-bottom: white thin solid;
+    margin-bottom: 15px;
+  }
+}
+
+.side-menu h3:hover {
+  color: #a7ff94;
+  cursor: pointer;
+}

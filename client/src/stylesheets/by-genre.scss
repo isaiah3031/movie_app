@@ -1,0 +1,11 @@
+.movie-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 20px 10%;
+  button {
+    width: 125px;
+    padding: 5px 5px;
+    margin: 90px auto;
+  }
+}

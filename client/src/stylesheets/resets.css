@@ -20,8 +20,18 @@ h3,
 p,
 a {
   color: white;
+  font-family: Bahnschrift;
+}
+h1,
+h2,
+h3 {
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 30px;
 }
 
 body {
-  background-color: #1d1d1d;
+  background-color: black;
 }

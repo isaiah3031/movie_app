@@ -5,7 +5,7 @@ import { fetchMoviesByGenre } from '../../actions/movie_actions'
 const mapStateToProps = (state, ownProps) => ({
   type: 'genre',
   movies: state.entities.movies,
-  genre: ownProps.genre
+  header: ownProps.genre.name
 })
 
 const mapDispatchToProps = dispatch => ({

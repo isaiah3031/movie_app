@@ -8,7 +8,7 @@
 
 #search-input {
   margin-top: 5px;
-
+  width: 30vw;
   background: url("../images/search_icon_ma.png");
   background-color: white;
   background-repeat: no-repeat;
@@ -18,14 +18,11 @@
   height: 30px;
 }
 
-#search-input {
-  width: 30vw;
-}
-
 header {
   justify-content: space-between;
   padding: 15px 0;
   border-bottom: solid thin white;
+  background-color: black;
 }
 
 header,
@@ -46,9 +43,10 @@ header,
   width: fit-content;
   max-width: 400px;
   border: solid white thin;
-  background: #1d1d1d;
+  background: black;
   opacity: 0.9;
   text-align: center;
+  z-index: 10;
 }
 .user-options:hover {
   div {

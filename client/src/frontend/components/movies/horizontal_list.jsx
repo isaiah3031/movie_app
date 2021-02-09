@@ -44,16 +44,19 @@ function HorizontalList(props) {
   }
 
   return ( 
-    <Carousel 
-      className='carousels'
-      infinite={true}
-      responsive={responsive}>        
-        {
-          movies.map((movie, index) => {
-          return <MovieIcon clickable={true} id={index} movie={movie} />
-        }
-      )}
-    </Carousel>
+    <>
+      {props.header ? <h2 className='carousels'>{props.header}</h2> : null}
+      <Carousel 
+        className='carousels'
+        infinite={true}
+        responsive={responsive}>        
+          {
+            movies.map((movie, index) => {
+            return <MovieIcon clickable={true} id={index} movie={movie} />
+          }
+        )}
+      </Carousel>
+    </>
   )
 }
 

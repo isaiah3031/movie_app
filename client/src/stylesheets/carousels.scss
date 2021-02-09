@@ -1,4 +1,8 @@
 .carousels {
   width: 80vw;
-  margin: 0 auto;
+  margin: 10px auto 0;
+  h2 {
+    padding-top: 50px;
+    border-top: solid white thin;
+  }
 }

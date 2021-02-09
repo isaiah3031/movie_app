@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import { withRouter } from 'react-router-dom'
 import MovieIcon from './movie_icon'
+import '../../../stylesheets/by-genre.scss'
 
-const MoviesByGenrePage = ({movies, fetchMoviesByGenre, match: {params}}, props) => {
+const MoviesByGenrePage = ({movies, fetchMoviesByGenre, genre, match: {params}}, props) => {
   const [page, setPage] = useState(1)
   
   const [isSending, setIsSending] = useState(false)
@@ -21,8 +22,9 @@ const MoviesByGenrePage = ({movies, fetchMoviesByGenre, match: {params}}, props)
   useEffect(() => {
     fetchMoviesByGenre(params.genreId, page)
   }, [])
-
-  return <>
+  
+  return <div className='movie-list'>
+    <h2>props.header</h2>
     {
       movies[params.genreId].map(movie => <MovieIcon movie={movie} clickable={true}/>)
     }
@@ -40,7 +42,7 @@ const MoviesByGenrePage = ({movies, fetchMoviesByGenre, match: {params}}, props)
       }>
       More Movies{page}
     </button>
-  </>
+  </div>
 }
 
 export default withRouter(MoviesByGenrePage)

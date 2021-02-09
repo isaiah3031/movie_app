@@ -1,7 +1,28 @@
 .detail-view {
   position: absolute;
-  width: 500px;
-  height: 500px;
-  background-color: red;
-  z-index: 100;
+  width: 100%;
+  height: 89%;
+  background-color: black;
+
+  .description {
+    position: absolute;
+    width: 30%;
+    padding: 15px;
+    border-radius: 10px;
+    left: 15%;
+    top: 15%;
+    margin: 0;
+    opacity: 80%;
+    background: black;
+    z-index: 1;
+    display: none;
+  }
+  .description > * {
+    margin: 15px 5px 0;
+  }
+  iframe {
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+  }
 }

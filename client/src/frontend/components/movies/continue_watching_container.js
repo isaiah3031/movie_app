@@ -5,7 +5,8 @@ import HorizontalList from './horizontal_list'
 const mapStateToProps = (state, ownProps) => ({
   type: 'Continue Watching',
   currentUser: state.session,
-  continueWatching: ownProps.continueWatching
+  continueWatching: ownProps.continueWatching,
+  header: ownProps.header
 })
 
 const mapDispatchToProps = dispatch => ({

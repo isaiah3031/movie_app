@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
 import SearchContainer from '../movies/search_container'
+import GenreListContainer from '../genre/genre_list_container'
 import CouchIcon from '../../../images/couch_icon_ma.png'
 import UserIcon from '../../../images/user_icon_ma.png'
 import HamburgerIcon from '../../../images/hamburger.png'
@@ -45,6 +46,7 @@ const Greeting = (props) => {
           id='hamburger-icon' 
           src={HamburgerIcon}   
         />
+        {isClicked ? <GenreListContainer /> : null}
       </div>
 
       

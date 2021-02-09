@@ -1,4 +1,5 @@
 #search-results {
+  padding: 15px;
   width: 50vw;
   z-index: 99;
   top: 50px;
@@ -8,5 +9,8 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: #1d1d1d;
+  background-color: black;
+  h1 {
+    width: 100%;
+  }
 }

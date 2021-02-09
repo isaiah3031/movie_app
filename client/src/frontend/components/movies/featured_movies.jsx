@@ -67,7 +67,7 @@ class FeaturedMovies extends React.Component{
               </div>
           })}
         </section>
-        {continueWatching === [] ? null : <ContinueWatchingContainer continueWatching={continueWatching}/>}
+        {continueWatching === [] ? null : <ContinueWatchingContainer continueWatching={continueWatching} header='Continue Watching'/>}
       </>
     )
   }
