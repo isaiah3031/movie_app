@@ -1,72 +1,72 @@
-header:not(#hamburger-icon) {
-  height: 53px;
+.icon {
+  height: 45px;
+}
+
+.icon:first-child {
+  margin: 0 15px;
+}
+
+#search-input {
+  margin-top: 5px;
+
+  background: url("../images/search_icon_ma.png");
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: 99% 2px;
+  padding-left: 10px;
+  height: 30px;
+}
+
+#search-input {
+  width: 30vw;
+}
+
+header {
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: solid thin white;
+}
+
+header,
+.nav-section,
+.user-options {
   display: flex;
   flex-direction: row;
-  .nav-section {
-    img,
-    button {
-      margin: 8px;
-    }
-  }
-  .greeting-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100vw;
-    border-bottom: solid white thin;
-    .user-options {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+}
 
-      img {
-        height: 30px;
-        width: 30px;
-        padding: 5px 10px;
-      }
-      div {
-        display: none;
-        background-color: white;
-        padding: 5px;
-        button {
-          margin: 5px;
-        }
-      }
-    }
-    .user-options:not(#hamburger-icon):hover {
-      div {
-        display: block;
-        position: absolute;
-        right: 10px;
-        top: 40px;
-        display: flex;
-        flex-direction: column;
-      }
-    }
-    .logo {
-      display: flex;
-      flex-direction: row;
-      img {
-        height: 40px;
-        padding: 5px 10px;
-      }
-    }
+.user-options div {
+  display: none;
+  position: absolute;
+  padding: 15px;
+  border-radius: 10px;
+  top: 60px;
+  right: 5px;
+  height: 100px;
+  width: fit-content;
+  max-width: 400px;
+  border: solid white thin;
+  background: #1d1d1d;
+  opacity: 0.9;
+  text-align: center;
+}
+.user-options:hover {
+  div {
+    display: block;
   }
-  button {
-    height: 20px;
-    padding: 2px 5px;
-    // margin: 14px 10px;
-  }
-  #search-input {
-    background: url(../images/search_icon_ma.png);
-    background-color: white;
-    margin: 7px 10px;
-    border: solid white thin outset;
-    height: 25px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: 99% 0;
-    padding: 0 5px 0;
-    width: 33vw;
-  }
+}
+
+button {
+  background-color: #a7ff94;
+  width: 80px;
+  height: 30px;
+  border-radius: 25px;
+}
+#hamburger-icon {
+  transition: transform 330ms ease-in-out;
+}
+.rotated {
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
 }

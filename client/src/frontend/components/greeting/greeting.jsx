@@ -6,16 +6,11 @@ import UserIcon from '../../../images/user_icon_ma.png'
 import HamburgerIcon from '../../../images/hamburger.png'
 
 const Greeting = (props) => {
-  const welcomeMessage = () => {
-    if (props.currentUser.username) {
-      return <h1>Welcome {props.currentUser.username}</h1>
-    } else {
-      return null
-    }
-  }
+  const [isClicked, toggleHam] = useState(false)
 
   const loggedIn = () => (
     <div>
+      <h1>Welcome {props.currentUser.username}</h1>
       <button onClick={() => props.logout()}>Logout</button>  
     </div>
   )
@@ -32,24 +27,28 @@ const Greeting = (props) => {
   )
   
   return (
-    <div className='greeting-container'>
+    <>
       <Link className='logo nav-section' to='/'>
-        <img src={CouchIcon} alt=''/>
+        <img className='icon' src={CouchIcon} alt=''/>
         <h1>Couchflix</h1>
       </Link>      
       <SearchContainer />
-      <section className='nav-section'>
+      <div className='nav-section'>
         <div className='user-options'>
-          {welcomeMessage()}
-          <img src={UserIcon}/>
+          <img className='icon' src={UserIcon}/>
           { props.currentUser.username ? loggedIn() : loggedOut() }
           
         </div>
-        <img id='hamburger-icon' src={HamburgerIcon} />
-      </section>
+        <img 
+          className={isClicked ? 'icon rotated' : 'icon'}
+          onClick={() => toggleHam(!isClicked)} 
+          id='hamburger-icon' 
+          src={HamburgerIcon}   
+        />
+      </div>
 
       
-    </div>
+    </>
   )
 } 
 
