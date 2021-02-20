@@ -1,6 +1,6 @@
 About
 
-A SPA built with React and Redux that displays products, saves products to carts, and allows users to make pseudo-purchases. This is built over a backend rails api that uses bcrypt for user authentication. Product details come from a restful api provided by RapidAPI. 
+A SPA built with React and Redux that displays movies, allows users to view trailers, and saves user's watch history. This is built over a backend rails api that uses bcrypt for user authentication. Product details come from a restful api provided by TheMovieDatabase. 
 
 Installation
 ```
