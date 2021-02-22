@@ -42,8 +42,9 @@ function HorizontalList(props) {
         movies = props.movies[props.genre.id]
       }
   }
-
-  return ( 
+  
+  try {
+    return ( 
     <>
       {props.header ? <h2 className='carousels'>{props.header}</h2> : null}
       <Carousel 
@@ -58,6 +59,10 @@ function HorizontalList(props) {
       </Carousel>
     </>
   )
+  } catch (error) {
+    return null
+  }
+  
 }
 
 export default HorizontalList
