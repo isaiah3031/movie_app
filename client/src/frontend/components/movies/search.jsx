@@ -11,8 +11,10 @@ class Search extends React.Component {
     }
   }
 
-  componentDidUpdate() {
-    this.props.fetchSearchResults(this.state.searchTerms)
+  componentDidUpdate(nextProps, nextState) {
+    if (JSON.stringify(this.state.searchTerms) !== JSON.stringify(nextState.searchTerms)) {
+      this.props.fetchSearchResults(this.state.searchTerms)
+    }
   }
 
   handleChanges(e) {
