@@ -1,24 +1,43 @@
-# README
+About
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A SPA built with React and Redux that displays movies, allows users to view trailers, and saves user's watch history. This is built over a backend rails api that uses bcrypt for user authentication. Product details come from a restful api provided by TheMovieDatabase. 
 
-Things you may want to cover:
+Installation
+```
+* Clone this repository
+$ git clone https://github.com/isaiah3031/movie_app
 
-* Ruby version
+# Go into the repository
+$ cd movie_app
 
-* System dependencies
+# Install dependencies
+$ yarn install
+$ bundle install
 
-* Configuration
+# Run the backend 
+$ rails s -p 3001
 
-* Database creation
+# Open a new console(This project requires two servers)
 
-* Database initialization
+# Go into the frontend folder
+$ cd movie_app/client
 
-* How to run the test suite
+# Add your RapidAPI Key
+$ code .env
+// REACT_APP_API_KEY=your_api_key 
+// Example:
+// REACT_APP_GOOGLE_API_KEY=123456
 
-* Services (job queues, cache servers, search engines, etc.)
+# install frontend dependencies 
+$ yarn install
 
-* Deployment instructions
+# Run the frontend 
+$ PORT=3000 yarn start
+```
 
-* ...
+* Credits
+    - [Search Icon](iconfinder.com)
+    - [User Icon](iconfinder.com)
+    - [Couch_Icon](https://www.flaticon.com/free-icon/armchair_4169217?term=couch&page=1&position=55&page=1&position=55&related_id=4169217&origin=search)
+    - [Create React App](https://create-react-app.dev/)
+    - [Movie_API](https://www.themoviedb.org/)
