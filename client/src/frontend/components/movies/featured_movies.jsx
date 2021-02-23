@@ -50,7 +50,8 @@ class FeaturedMovies extends React.Component{
 
   render() {
     let continueWatching = this.continueWatching()
-    return (
+    try {
+      return (
       <>
         {/* Renders the Featured movie component with one movie selected by default. */}
         <section className='featured_content'>
@@ -69,7 +70,10 @@ class FeaturedMovies extends React.Component{
         </section>
         {continueWatching === [] ? null : <ContinueWatchingContainer continueWatching={continueWatching} header='Continue Watching'/>}
       </>
-    )
+      )
+    } catch (error) {
+      return null
+    }
   }
 }
 

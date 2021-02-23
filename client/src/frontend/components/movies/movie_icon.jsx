@@ -8,17 +8,21 @@ const MovieIcon = ({clickable, history, movie: {poster_path, id}}) => {
   const viewDetails = () => {
     history.push(`/movie/${id}`)
   }
+  try {
+    return (
+      <>
+        <div onClick={() => {
+          if (clickable) viewDetails()
+          }
+        } className='small_icons' id={id}>
+          <img src={`https://image.tmdb.org/t/p/w500${poster_path}`}/>
+        </div>
+      </>
+    )
+  } catch (error) {
+    return null
+  }
 
-  return (
-    <>
-      <div onClick={() => {
-        if (clickable) viewDetails()
-        }
-      } className='small_icons' id={id}>
-        <img src={`https://image.tmdb.org/t/p/w500${poster_path}`}/>
-      </div>
-    </>
-  )
 }
 
 export default withRouter(MovieIcon);
