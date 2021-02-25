@@ -13,8 +13,6 @@
 .featured_content {
   width: fit-content;
   margin: 0 auto;
-  p {
-  }
   iframe {
     overflow: hidden;
     height: 80vh;
@@ -51,43 +49,3 @@
     margin: 200px 0 0 0;
   }
 }
-// .featured_content {
-//   height: 190vh;
-//   width: 95vw;
-//   margin: 15px auto;
-//   display: flex;
-//   flex-direction: row;
-//   flex-wrap: wrap;
-//   justify-content: space-around;
-//   padding: px 0 0 0;
-//   .small_featured {
-//     height: fit-content;
-//     order: 2;
-//     padding: 0;
-//     margin: 50px 0 0 0;
-//     p {
-//       display: none;
-//     }
-//   }
-
-//   .large_featured {
-//     order: 1;
-//     width: 95vw;
-//     object-fit: cover;
-//     height: 80%;
-//     text-align: center;
-//     h1 {
-//       text-align: left;
-//     }
-//     iframe {
-//       object-fit: cover;
-//       margin: 25px 0 0 0;
-//       height: 90%;
-//       width: 100%;
-//       border: none;
-//     }
-//     p {
-//       padding: 20px 80px;
-//     }
-//   }
-// }

@@ -6,7 +6,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 gem 'annotate'
-gem 'figaro'
 gem 'bcrypt'
 gem 'better_errors'
 gem 'binding_of_caller'
