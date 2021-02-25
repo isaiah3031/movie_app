@@ -1,6 +1,24 @@
 import React from 'react'
+import $ from 'jquery'
 
 const FeaturedMovie = ({movie}) => {
+  let timedelay = 1;
+  const delayCheck = () => {
+    if (timedelay == 6) { 
+      $('p').fadeOut();
+      timedelay = 1;
+    }
+    timedelay += 1;
+  }
+
+  $(document).mousemove(function() {
+    $('p').fadeIn();
+    timedelay = 1;
+    clearInterval(_delay);
+    _delay = setInterval(delayCheck, 500);
+  })
+  let _delay = setInterval(delayCheck, 500)
+
   return <>
     <h1>Featured Movies</h1>
     <iframe 
