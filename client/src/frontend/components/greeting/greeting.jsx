@@ -36,9 +36,7 @@ const Greeting = (props) => {
       <SearchContainer />
       <div className='nav-section'>
         <div className='user-options'>
-          <img className='icon' src={UserIcon}/>
           { props.currentUser.username ? loggedIn() : loggedOut() }
-          
         </div>
         <img 
           className={isClicked ? 'icon rotated' : 'icon'}

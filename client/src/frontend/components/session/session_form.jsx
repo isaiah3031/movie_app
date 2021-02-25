@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import '../../../stylesheets/session-styles.scss'
 
 class SessionForm extends React.Component{
   constructor(props){
@@ -53,16 +54,15 @@ class SessionForm extends React.Component{
   render() {
     return (
       <div className='session-page'>
-        <div className='toggle-session'>
-          <h1>Welcome To MovieApp</h1>
-          <Link to={this.handleLinkTo()}>
-            <button>{this.handleLinkTo()}</button>
-          </Link>
-        </div>
+
         <form className='session-form' onSubmit={this.handleSubmit}>
  
           {this.handleErrors().map(error => <p>{error}</p>)}
-          <h1>{this.props.formType === 'login' ? 'Sign In' : 'Create Account'}</h1>
+          <h1>{this.props.formType === 'login' ? 'Sign In' : 'Create Account'}
+            <Link to={this.handleLinkTo()}>
+              <button>{this.handleLinkTo()}</button>
+            </Link>
+          </h1>
             <input type='text'
               placeholder='Username'
               id='username' 

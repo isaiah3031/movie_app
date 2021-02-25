@@ -24,7 +24,7 @@ const MoviesByGenrePage = ({movies, fetchMoviesByGenre, genre, match: {params}},
   }, [])
   
   return <div className='movie-list'>
-    <h2>props.header</h2>
+    <h2>Search Results: </h2>
     {
       movies[params.genreId].map(movie => <MovieIcon movie={movie} clickable={true}/>)
     }
@@ -40,7 +40,7 @@ const MoviesByGenrePage = ({movies, fetchMoviesByGenre, genre, match: {params}},
         sendRequest(nextPage)
         }
       }>
-      More Movies{page}
+      More Movies
     </button>
   </div>
 }

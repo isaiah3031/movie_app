@@ -1,0 +1,17 @@
+.session-page {
+  width: 40vw;
+  margin: 100px auto 0 auto;
+  h1 {
+    font-size: 40px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  input {
+    margin: 5px 0;
+  }
+}
+.session-form {
+  display: flex;
+  flex-direction: column;
+}

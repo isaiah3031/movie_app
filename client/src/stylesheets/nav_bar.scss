@@ -1,6 +1,7 @@
 .icon {
   height: 35px;
 }
+
 #search-input {
   width: 100%;
   max-width: 500px;
@@ -48,14 +49,6 @@
     margin: 0;
     width: fit-content;
   }
-  .user-options {
-    .icon {
-      display: block;
-    }
-    div {
-      display: none;
-    }
-  }
 }
 // header,
 // .nav-section,
@@ -92,17 +85,17 @@
 //   }
 // }
 
-// button {
-//   background-color: #a7ff94;
-//   width: 80px;
-//   height: 30px;
-//   border-radius: 25px;
-// }
-// #hamburger-icon {
-//   transition: transform 330ms ease-in-out;
-// }
-// .rotated {
-//   transform: rotate(90deg);
-//   -webkit-transform: rotate(90deg);
-//   -ms-transform: rotate(90deg);
-// }
+button {
+  background-color: #a7ff94;
+  width: 80px;
+  height: 30px;
+  border-radius: 25px;
+}
+#hamburger-icon {
+  transition: transform 330ms ease-in-out;
+}
+.rotated {
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+}
