@@ -15,7 +15,7 @@
   margin: 0 auto;
   iframe {
     overflow: hidden;
-    height: 80vh;
+    height: 50%;
     width: 100%;
     margin: 10px auto;
   }
@@ -31,7 +31,11 @@
 @media only screen and (min-width: 1300px) {
   .large_featured {
     width: 60vw;
+    height: 80%;
     position: relative;
+    iframe {
+      height: 80vh;
+    }
     p {
       position: absolute;
       width: 70%;
