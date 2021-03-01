@@ -2,8 +2,6 @@ About
 
 A SPA built with React and Redux that displays movies, allows users to view trailers, and saves user's watch history. This is built over a backend rails api that uses bcrypt for user authentication. Product details come from a restful api provided by TheMovieDatabase. 
  
- ![Alt Text](https://media.giphy.com/media/yiiwJxt1Euk7EYTy4Z/giphy.gif)
-
 Installation
 ```
 * Clone this repository
